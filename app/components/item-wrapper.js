@@ -6,13 +6,15 @@ export default Ember.Component.extend({
     if (this.get('finished')) {
       return [];
     }
-    return this.get('model').slice();
+    return this.get('model');
   }),
 
   actions: {
     cycleComponents: function() {
       this.set('finished', false);
-      Ember.run.later(() => this.set('finished', true));
+      Ember.run.later(() => {
+        this.set('finished', true);
+      });
     }
-  },
+  }
 });
