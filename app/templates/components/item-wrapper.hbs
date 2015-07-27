@@ -1,0 +1,6 @@
+<button {{action 'cycleComponents'}}>Render and remove components</button>
+<ul>
+  {{#each items as |item index|}}
+     <li>{{test-item instance=item}}</li>
+  {{/each}}
+</ul>
