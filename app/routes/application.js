@@ -9,12 +9,6 @@ var model = Ember.Object.extend({
 
 export default Ember.Route.extend({
   model: function() {
-    var items = [];
-    for (var i=0; i < 100; i++) {
-      items.push(model.create({
-        speed: i % 2,
-      }));
-    }
-    return items;
+    return [model.create({ speed: 0 })];
   },
 });
