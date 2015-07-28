@@ -1,6 +1,6 @@
 <button {{action 'cycleComponents'}}>Render and remove components</button>
 <ul>
-  {{#if items.firstObject}}
-     <li>{{test-item instance=items.firstObject}}</li>
-  {{/if}}
+  {{#unless finished}}
+    <li>{{test-item instance=firstObject}}</li>
+  {{/unless}}
 </ul>
