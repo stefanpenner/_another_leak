@@ -1,19 +1,14 @@
 import Ember from 'ember';
 
-var model = Ember.Object.extend({
-  speed: 0,
-  moving: Ember.computed('speed', function() {
-    return this.get('speed') > 0;
-  })
-});
-
 export default Ember.Component.extend({
   init() {
     this._super(...arguments);
-    this.model = [model.create()];
+    this.model = [
+      { moving: true }
+    ];
+    this.finished = true;
   },
 
-  finished: true,
   firstObject: Ember.computed('items.[]', function() {
     return this.get('items')[0];
   }),
